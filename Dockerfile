@@ -1,12 +1,20 @@
 FROM docker
 
-ENV AWS_CLI_VERSION 1.15.47
+ENV AWS_CLI_VERSION 1.16.25
+
+RUN apk add --no-cache python3 && \
+    python3 -m ensurepip && \
+    rm -r /usr/lib/python*/ensurepip && \
+    pip3 install --upgrade pip setuptools && \
+    if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
+    if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
+    rm -r /root/.cache
 
 
 RUN apk --no-cache update && \
-    apk --no-cache add python curl py-pip py-setuptools ca-certificates groff less && \
-    pip install --upgrade pip && \
-    pip --no-cache-dir install awscli==${AWS_CLI_VERSION} docker-compose wget && \
+    apk --no-cache add curl ca-certificates groff less && \
+    pip3 install --upgrade awscli && \
+    pip3 --no-cache-dir install awscli==${AWS_CLI_VERSION} docker-compose wget && \
     rm -rf /var/cache/apk/*
 
 ADD https://github.com/a8m/envsubst/releases/download/v1.1.0/envsubst-Linux-x86_64 /usr/local/bin/envsubst
@@ -28,11 +36,9 @@ RUN chmod +x /usr/local/bin/envsubst
 ADD https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/linux/amd64/aws-iam-authenticator /usr/local/bin/aws-iam-authenticator
 RUN chmod +x /usr/local/bin/aws-iam-authenticator
 
-# Set the Kubernetes version as found in the UCP Dashboard or API
-ENV k8sversion v1.8.11
 
 # Get the kubectl binary.
-ADD https://storage.googleapis.com/kubernetes-release/release/$k8sversion/bin/linux/amd64/kubectl /usr/local/bin/kubectl
+ADD https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/linux/amd64/kubectl /usr/local/bin/kubectl
 
 # Make the kubectl binary executable.
 RUN chmod +x /usr/local/bin/kubectl
