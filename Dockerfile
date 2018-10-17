@@ -36,7 +36,7 @@ ADD https://storage.googleapis.com/kubernetes-release/release/$k8sversion/bin/li
 
 # Make the kubectl binary executable.
 RUN chmod +x /usr/local/bin/kubectl
-RUN /usr/local/bin/kubectl verion
+RUN /usr/local/bin/kubectl version
 
 ENV LOG=file
 #ENTRYPOINT ["docker --version"]
