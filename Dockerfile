@@ -28,6 +28,15 @@ RUN chmod +x /usr/local/bin/envsubst
 ADD https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/linux/amd64/aws-iam-authenticator /usr/local/bin/aws-iam-authenticator
 RUN chmod +x /usr/local/bin/aws-iam-authenticator
 
+# Set the Kubernetes version as found in the UCP Dashboard or API
+ENV k8sversion v1.8.11
+
+# Get the kubectl binary.
+ADD https://storage.googleapis.com/kubernetes-release/release/$k8sversion/bin/linux/amd64/kubectl /usr/local/bin/kubectl
+
+# Make the kubectl binary executable.
+RUN chmod +x /usr/local/bin/kubectl
+RUN /usr/local/bin/kubectl verion
 
 ENV LOG=file
 #ENTRYPOINT ["docker --version"]
