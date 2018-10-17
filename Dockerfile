@@ -26,12 +26,11 @@ RUN chmod +x /usr/local/bin/envsubst
 #    /usr/local/bin/docker-compose --version
 
 ADD https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/linux/amd64/aws-iam-authenticator /usr/local/bin/aws-iam-authenticator
-RUN chmod +x /usr/local/bin/aws-iam-authenticator &&\
-    /usr/local/bin/aws-iam-authenticator --version
+RUN chmod +x /usr/local/bin/aws-iam-authenticator
 
 
 ENV LOG=file
-ENTRYPOINT ["docker --version"]
+#ENTRYPOINT ["docker --version"]
 CMD []
 
 
