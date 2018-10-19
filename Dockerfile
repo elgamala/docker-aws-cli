@@ -43,6 +43,11 @@ ADD https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/linux/am
 # Make the kubectl binary executable.
 RUN chmod +x /usr/local/bin/kubectl
 
+# Install Helm v2.10.0
+ADD https://storage.googleapis.com/kubernetes-helm/helm-v2.10.0-linux-amd64.tar.gz helm-linux-amd64.tar.gz
+RUN tar -zxvf helm-linux-amd64.tar.gz
+RUN mv linux-amd64/helm /usr/local/bin/helm
+
 ENV LOG=file
 #ENTRYPOINT ["docker --version"]
 CMD []
