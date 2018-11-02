@@ -6,7 +6,7 @@
 An Alpine based docker image contains a good combination of commenly used tools to build, package as docker image, login and push to AWS ECR, AWS authentication and all Kuberentes staff.
 
 
-Image content
+## Tools listing
 
 |Tool                   |Version        |Description                                                                               |
 |-----------------------|---------------|------------------------------------------------------------------------------------------|
