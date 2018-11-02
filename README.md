@@ -32,9 +32,10 @@ Simply pull the image from official docker hub using the following command as it
   docker pull asorour/docker-aws-cli
 ```
 
-To use the image inside one of gitlab pipelines please follow below steps:
+## Even more useful in Gitlab
+
 - Please use docker enabled gitlab runner and make sure docker engine is running in priviledged mode to enable Docker inside Docker (DinD). Learn more? https://docs.gitlab.com/runner/executors/docker.html#use-docker-in-docker-with-privileged-mode
-- Please use the image as your builder image to be loaded into the runner during the build step initiation and enable DinD service. To acheive this please add the following snippet to your pipeline code i.e. gitlab-ci.yaml.
+- Use the image as your builder image to be loaded into the runner during the build step initiation and enable DinD service. To acheive this please add the following snippet to your pipeline code i.e. gitlab-ci.yaml.
 ```yaml
 docker: 
     stage: create-docker-image
