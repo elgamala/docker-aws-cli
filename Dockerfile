@@ -12,8 +12,8 @@ RUN apk add --no-cache python3 && \
 
 
 RUN apk --no-cache update && \
-    apk --no-cache add curl ca-certificates groff less && \
-    pip3 install --upgrade awscli && \
+    apk --no-cache add curl make bash ca-certificates groff less && \
+    pip3 install --upgrade awscli urllib3 && \
     pip3 --no-cache-dir install awscli==${AWS_CLI_VERSION} docker-compose wget && \
     rm -rf /var/cache/apk/*
 
@@ -43,10 +43,25 @@ ADD https://amazon-eks.s3-us-west-2.amazonaws.com/1.10.3/2018-07-26/bin/linux/am
 # Make the kubectl binary executable.
 RUN chmod +x /usr/local/bin/kubectl
 
+# Install GIT
+RUN apk add --no-cache git
+
+#ENV HELM_HOME=~/.helm
+#RUN mkdir -p ~/.helm/plugins
+
+#RUN git clone https://github.com/hypnoglow/helm-s3.git
+
 # Install Helm v2.10.0
 ADD https://storage.googleapis.com/kubernetes-helm/helm-v2.10.0-linux-amd64.tar.gz helm-linux-amd64.tar.gz
 RUN tar -zxvf helm-linux-amd64.tar.gz
 RUN mv linux-amd64/helm /usr/local/bin/helm
+
+# Initialize Helm
+
+RUN helm init --client-only
+
+# Install Helm S3 Plugin
+RUN helm plugin install https://github.com/hypnoglow/helm-s3.git
 
 ENV LOG=file
 #ENTRYPOINT ["docker --version"]
