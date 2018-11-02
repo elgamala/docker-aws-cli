@@ -1,6 +1,10 @@
 # Builder docker image 
 
+[hub]: https://hub.docker.com/r/asorour/docker-aws-cli
+
+
 An Alpine based docker image contains a good combination of commenly used tools to build, package as docker image, login and push to AWS ECR, AWS authentication and all Kuberentes staff.
+
 
 Image content
 
@@ -17,6 +21,5 @@ Image content
 |Kubectl                |1.10.3         |Kubectl used to administrate the K8S cluster                                              |
 |git                    |2.18.1         |World's most popular version control tool                                                 ||helm                   |2.10.0         |Package manager for K8S clusters that simplifies complex deployments with simple Charts   |
 |helm-s3 plugin         |0.7.0          |S3 integration plugin to use S3 as a private Helm Charts repositories                     |
-------------------------------------------------------------------------------------------------------------------------------------
 
-
+The image is mainly used as a builder images while creating CICD pipelines.
