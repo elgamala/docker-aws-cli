@@ -20,15 +20,16 @@ The image is mainly used as a builder images while creating CICD pipelines.
 |Envsubst               |1.1.0          |Simple tool to substitute template files with matching Environment Variables values       |
 |aws-iam-authenticator  |1.10.3         |IAM authentication utility offers a secure proxy for authenticating kubectl to K8S cluster|
 |Kubectl                |1.10.3         |Kubectl used to administrate the K8S cluster                                              |
-|git                    |2.18.1         |World's most popular version control tool                                                 ||helm                   |2.10.0         |Package manager for K8S clusters that simplifies complex deployments with simple Charts   |
+|git                    |2.18.1         |World's most popular version control tool                                                 |
+|helm                   |2.10.0         |Package manager for K8S clusters that simplifies complex deployments with simple Charts   |
 |helm-s3 plugin         |0.7.0          |S3 integration plugin to use S3 as a private Helm Charts repositories                     |
 
 ## Installation guide
 
 Simply pull the image from official docker hub using the following command as it contains nothing more than a set of open source tools.
 
-```
-docker pull asorour/docker-aws-cli
+```sh
+  docker pull asorour/docker-aws-cli
 ```
 
 To use the image inside one of gitlab pipelines please follow below steps:
