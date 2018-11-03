@@ -63,6 +63,9 @@ RUN helm init --client-only
 # Install Helm S3 Plugin
 RUN helm plugin install https://github.com/hypnoglow/helm-s3.git
 
+# Cleanup apt cache
+RUN rm -rf /var/cache/apk/*
+
 ENV LOG=file
 #ENTRYPOINT ["docker --version"]
 CMD []
