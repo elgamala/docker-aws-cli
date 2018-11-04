@@ -1,7 +1,6 @@
-[travis-ci]:https://travis-ci.com/aserour/docker-aws-cli.svg?branch=master
+![build status badge](https://travis-ci.com/aserour/docker-aws-cli.svg?branch=master) ![hub](https://img.shields.io/docker/pulls/asorour/docker-aws-cli.svg)
 ## Builder docker image
 
-[hub]:https://hub.docker.com/r/asorour/docker-aws-cli
 
 
 An Alpine based docker image contains a good combination of commenly used tools to build, package as docker image, login and push to AWS ECR, AWS authentication and all Kuberentes staff.
