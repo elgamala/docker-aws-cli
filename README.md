@@ -1,4 +1,4 @@
-[![build status badge](https://travis-ci.com/aserour/docker-aws-cli.svg?branch=master)](https://travis-ci.com/aserour/docker-aws-cli) [![hub](https://img.shields.io/docker/pulls/asorour/docker-aws-cli.svg)](https://hub.docker.com/r/asorour/docker-aws-cli/)
+[![Build Status](https://travis-ci.com/aserour/docker-aws-cli.svg?branch=master)](https://travis-ci.com/aserour/docker-aws-cli) [![hub](https://img.shields.io/docker/pulls/asorour/docker-aws-cli.svg)](https://hub.docker.com/r/asorour/docker-aws-cli/)
 ## Builder docker image
 
 
