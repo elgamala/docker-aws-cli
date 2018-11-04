@@ -1,6 +1,14 @@
 FROM docker
 
+LABEL tools="docker-image, gitlab-aws, aws, helm, helm-charts, docker, gitlab, gitlab-ci, kubectl, s3, aws-iam-authenticator, ecr, bash, envsubst, alpine, curl, python3, pip3, git"
+LABEL version="1.0.0"
+LABEL description="An Alpine based docker image contains a good combination of commenly used tools\
+ to build, package as docker image, login and push to AWS ECR, AWS authentication and all Kuberentes staff. \
+ tools included: Docker, AWS-CLI, Kubectl, Helm, Curl, Python, Envsubst, Python, Pip, Git, Bash, AWS-IAM-Auth."
+LABEL maintainer="eng.ahmed.srour@gmail.com"
+
 ENV AWS_CLI_VERSION 1.16.25
+
 
 RUN apk add --no-cache python3 && \
     python3 -m ensurepip && \
