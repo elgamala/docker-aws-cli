@@ -47,5 +47,5 @@ docker:
         DOCKER_DRIVER: overlay           # For better build performance
 
     script:
-        - echo 'Your build scripts goes here and you can use all of the above toolset
+        - echo 'Your build scripts goes here and you can use all of the above toolset'
 ```
