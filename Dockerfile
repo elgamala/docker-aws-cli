@@ -20,7 +20,7 @@ RUN apk add --no-cache python3 && \
 
 
 RUN apk --no-cache update && \
-    apk --no-cache add curl make bash ca-certificates groff less && \
+    apk --no-cache add curl jq make bash ca-certificates groff less && \
     pip3 install --upgrade awscli urllib3 && \
     pip3 --no-cache-dir install awscli==${AWS_CLI_VERSION} docker-compose wget && \
     rm -rf /var/cache/apk/*
@@ -64,8 +64,9 @@ RUN rm -rf /var/cache/apk/*
 
 ENV LOG=file
 #ENTRYPOINT ["docker --version"]
-CMD []
+#CMD []
 
+#CMD [jq -version]
 
 #VOLUME /var/run/docker.sock:/var/run/docker.sock
 
