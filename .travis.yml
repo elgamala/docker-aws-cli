@@ -10,8 +10,6 @@ env:
     - COMMIT=${TRAVIS_COMMIT::8}
 before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-Bash
-#  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   - export REPO=asorour/docker-aws-cli
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
 
