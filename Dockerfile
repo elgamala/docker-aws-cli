@@ -40,7 +40,7 @@ RUN set -x && \
 # omit docker-compose. don't need without dind, let's remove in this fork.
 # RUN pip3 --no-cache-dir install docker-compose 
 
-ADD https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-v${DOCKERIZE_VERSION}.tar.gz dockerize-alpine-linux-amd64.tar.gz
+ADD https://github.com/jwilder/dockerize/releases/download/v$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-v${DOCKERIZE_VERSION}.tar.gz dockerize-alpine-linux-amd64.tar.gz
 RUN tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64.tar.gz && \
     rm dockerize-alpine-linux-amd64.tar.gz
 
