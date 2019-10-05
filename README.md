@@ -1,7 +1,6 @@
-[![Build Status](https://travis-ci.com/aserour/docker-aws-cli.svg?branch=master)](https://travis-ci.com/aserour/docker-aws-cli) [![hub](https://img.shields.io/docker/pulls/asorour/docker-aws-cli.svg)](https://hub.docker.com/r/asorour/docker-aws-cli/)
+[![CircleCI](https://circleci.com/gh/guitarrapc/docker-aws-cli.svg?style=svg)](https://circleci.com/gh/guitarrapc/docker-aws-cli) [![hub](https://img.shields.io/docker/pulls/guitarrapc/docker-awscli-kubectl.svg)](https://hub.docker.com/r/guitarrapc/docker-awscli-kubectl/)
+
 ## Builder docker image
-
-
 
 An Alpine based docker image contains a good combination of commenly used tools to build, package as docker image, login and push to AWS ECR, AWS authentication and all Kuberentes staff.
 
@@ -29,7 +28,7 @@ The image is mainly used as a builder images while creating CICD pipelines.
 Simply pull the image from official docker hub using the following command as it contains nothing more than a set of open source tools.
 
 ```sh
-  docker pull asorour/docker-aws-cli
+  docker pull guitarrapc/docker-awscli-kubectl
 ```
 
 ## Even more useful in Gitlab
@@ -40,7 +39,7 @@ Simply pull the image from official docker hub using the following command as it
 ```yaml
 docker:
     stage: create-docker-image
-    image: asorour/docker-aws-cli
+    image: guitarrapc/docker-awscli-kubectl
     services:
         - docker:dind
     variables:

@@ -26,6 +26,8 @@ RUN set -x && \
     if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
     if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
     rm -r /root/.cache
+# additionally required by docker-compose:
+# python3-dev libffi-dev openssl-dev gcc libc-dev make
 
 RUN set -x && \
     apk --no-cache update && \
@@ -34,9 +36,8 @@ RUN set -x && \
     pip3 --no-cache-dir install awscli==${AWS_CLI_VERSION} && \
     rm -rf /var/cache/apk/*
 
-# why docker-compose? don't need almost cases.
-# ADD https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
-# RUN chmod +x /usr/local/bin/docker-compose
+# why docker-compose? don't need without dind, let's remove in this fork.
+# RUN pip3 --no-cache-dir install docker-compose 
 
 ADD https://github.com/a8m/envsubst/releases/download/v${ENVSUBST_VERSION}/envsubst-Linux-x86_64 /usr/local/bin/envsubst
 RUN chmod +x /usr/local/bin/envsubst
