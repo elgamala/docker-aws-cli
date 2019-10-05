@@ -32,7 +32,7 @@ RUN set -x && \
 
 RUN set -x && \
     apk --no-cache update && \
-    apk --no-cache add curl jq make bash ca-certificates groff less && \
+    apk --no-cache add curl jq make bash ca-certificates groff less git openssh-client && \
     pip3 install --upgrade awscli urllib3 && \
     pip3 --no-cache-dir install awscli==${AWS_CLI_VERSION} && \
     rm -rf /var/cache/apk/*
