@@ -16,7 +16,8 @@ ENV AWS_CLI_VERSION="1.16.253" \
     KUBECTL_VERSION="1.14.6" \
     KUBECTL_DATE="2019-08-22" \
     HELM_VERSION="2.14.3" \
-    HELM_S3_VERSION="0.8.0"
+    HELM_S3_VERSION="0.8.0" \
+    DOCKERIZE_VERSION="0.6.1"
 
 RUN set -x && \
     apk add --no-cache python3 && \
@@ -36,8 +37,12 @@ RUN set -x && \
     pip3 --no-cache-dir install awscli==${AWS_CLI_VERSION} && \
     rm -rf /var/cache/apk/*
 
-# why docker-compose? don't need without dind, let's remove in this fork.
+# omit docker-compose. don't need without dind, let's remove in this fork.
 # RUN pip3 --no-cache-dir install docker-compose 
+
+ADD https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-v${DOCKERIZE_VERSION}.tar.gz dockerize-alpine-linux-amd64.tar.gz
+RUN tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64.tar.gz && \
+    rm dockerize-alpine-linux-amd64.tar.gz
 
 ADD https://github.com/a8m/envsubst/releases/download/v${ENVSUBST_VERSION}/envsubst-Linux-x86_64 /usr/local/bin/envsubst
 RUN chmod +x /usr/local/bin/envsubst

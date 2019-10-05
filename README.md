@@ -22,6 +22,7 @@ The image is mainly used as a builder images while creating CICD pipelines.
 |git                    |2.18.1         |World's most popular version control tool                                                 |
 |helm                   |2.14.3         |Package manager for K8S clusters that simplifies complex deployments with simple Charts   |
 |helm-s3 plugin         |0.8.0          |S3 integration plugin to use S3 as a private Helm Charts repositories                     |
+|dockerize              |0.6.1          |Utility to simplify running applications in docker containers                             |
 
 ## Installation guide
 
