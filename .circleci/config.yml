@@ -46,6 +46,7 @@ workflows:
             tags:
               only: /.*/
       - push:
+          context: dockerhub-login
           requires:
             - build
           filters:
