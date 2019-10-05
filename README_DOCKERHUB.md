@@ -30,7 +30,7 @@ other tools will be updated on kubectl update time.
 | Kubectl |	Kubectl used to administrate the K8S cluster |
 | git |	World's most popular version control tool |
 | helm |	Package manager for K8S clusters that simplifies complex deployments with simple Charts |
-| helm |-s3 plugin	S3 integration plugin to use S3 as a private Helm Charts repositories |
+| helm-s3 plugin |	S3 integration plugin to use S3 as a private Helm Charts repositories |
 
 > Important: tools have specific versions, see file Dockerfile.
 
