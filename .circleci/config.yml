@@ -15,8 +15,6 @@ jobs:
           version: 17.09.0-ce
       - run:
           command: docker build --build-arg VCS_REF=$(git rev-parse --short HEAD) -t ${OWNER}/${IMAGE_NAME}:latest .
-      - run:
-          command: docker image save ${OWNER}/${IMAGE_NAME}:latest > ./docker-image.tar
   build_push:
     executor: default
     steps:
@@ -25,8 +23,6 @@ jobs:
           version: 17.09.0-ce
       - run:
           command: docker build --build-arg VCS_REF=$(git rev-parse --short HEAD) -t ${OWNER}/${IMAGE_NAME}:latest .
-      - run:
-          command: docker image save ${OWNER}/${IMAGE_NAME}:latest > ./docker-image.tar
       - run:
           command: docker tag ${OWNER}/${IMAGE_NAME}:latest ${OWNER}/${IMAGE_NAME}:$CIRCLE_TAG
       - run:
@@ -42,6 +38,7 @@ workflows:
               only: /.*/
       - build_push:
           context: dockerhub-login
+          required: build
           filters:
             branches:
               ignore: /.*/
