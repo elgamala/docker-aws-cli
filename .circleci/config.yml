@@ -38,7 +38,8 @@ workflows:
               only: /.*/
       - build_push:
           context: dockerhub-login
-          required: build
+          requires:
+            - build
           filters:
             branches:
               ignore: /.*/
