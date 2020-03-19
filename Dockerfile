@@ -55,7 +55,7 @@ ADD https://amazon-eks.s3-us-west-2.amazonaws.com/${KUBECTL_VERSION}/${KUBECTL_D
 RUN chmod +x /usr/local/bin/kubectl
 
 ADD https://github.com/garethr/kubeval/releases/download/${KUBEVAL_VERSION}/kubeval-linux-amd64.tar.gz kubeval-linux-amd64.tar.gz
-RUN tar -C /usr/local/bin -xzvf kubeval-darwin-amd64.tar.gz && \
+RUN tar -C /usr/local/bin -xzvf kubeval-linux-amd64.tar.gz && \
     rm kubeval-linux-amd64.tar.gz
 
 # Install GIT

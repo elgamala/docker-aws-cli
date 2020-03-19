@@ -11,17 +11,18 @@ The image is mainly used as a builder images while creating CICD pipelines.
 |Tool                   |Version        |Description                                                                               |
 |-----------------------|---------------|------------------------------------------------------------------------------------------|
 |Docker Engine          |18.6           |Docker image containing docker engine to offer Docker inside Docker (DinD)                |
-|AWS CLI                |1.16.253       |AWS commandline tools for managing simple infrastructure tasks                            |
-|Python                 |3.6.6          |Usefull scripting language and also a common rerequisite for many other tools             |
-|Pip                    |18.1           |Python package manager used to install many libraries and other tools i.e. aws-cli        |
-|cUrl                   |7.61.1         |Commandline professional http(s) client tool                                              |
+|AWS CLI                |1.18.24        |AWS commandline tools for managing simple infrastructure tasks                            |
+|Python                 |3.8.2          |Usefull scripting language and also a common rerequisite for many other tools             |
+|Pip                    |19.2.3         |Python package manager used to install many libraries and other tools i.e. aws-cli        |
+|cUrl                   |7.67.0         |Commandline professional http(s) client tool                                              |
 |Bash                   |4.4.19         |Advanced linux shell                                                                      |
 |Envsubst               |1.1.0          |Simple tool to substitute template files with matching Environment Variables values       |
-|aws-iam-authenticator  |1.14.6         |IAM authentication utility offers a secure proxy for authenticating kubectl to K8S cluster|
-|Kubectl                |1.14.6         |Kubectl used to administrate the K8S cluster                                              |
-|git                    |2.18.1         |World's most popular version control tool                                                 |
-|helm                   |2.14.3         |Package manager for K8S clusters that simplifies complex deployments with simple Charts   |
-|helm-s3 plugin         |0.8.0          |S3 integration plugin to use S3 as a private Helm Charts repositories                     |
+|aws-iam-authenticator  |1.15.10        |IAM authentication utility offers a secure proxy for authenticating kubectl to K8S cluster|
+|Kubectl                |1.15.10        |Kubectl used to administrate the K8S cluster                                              |
+|git                    |2.24.1         |World's most popular version control tool                                                 |
+|helm                   |2.16.2         |Package manager for K8S clusters that simplifies complex deployments with simple Charts   |
+|helm-s3 plugin         |0.9.2          |S3 integration plugin to use S3 as a private Helm Charts repositories                     |
+|kubeval                |0.4.0          |Validate your Kubernetes configuration files, supports multiple Kubernetes versions       |
 |dockerize              |0.6.1          |Utility to simplify running applications in docker containers                             |
 
 ## Installation guide
