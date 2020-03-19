@@ -9,14 +9,15 @@ LABEL description="An Alpine based docker image contains a good combination of c
 LABEL maintainer="eng.ahmed.srour@gmail.com"
 
 # https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
-ENV AWS_CLI_VERSION="1.16.253" \
+ENV AWS_CLI_VERSION="1.18.24" \
     ENVSUBST_VERSION="1.1.0" \
-    AWS_IAM_AUTHENTICATOR_VERSION="1.14.6" \
-    AWS_IAM_AUTHENTICATOR_DATE="2019-08-22" \
-    KUBECTL_VERSION="1.14.6" \
-    KUBECTL_DATE="2019-08-22" \
-    HELM_VERSION="2.14.3" \
-    HELM_S3_VERSION="0.8.0" \
+    AWS_IAM_AUTHENTICATOR_VERSION="1.15.10" \
+    AWS_IAM_AUTHENTICATOR_DATE="2020-02-22" \
+    KUBECTL_VERSION="1.15.10" \
+    KUBECTL_DATE="2020-02-22" \
+    HELM_VERSION="2.16.2" \
+    HELM_S3_VERSION="0.9.2" \
+    KUBEVAL_VERSION="0.14.0" \
     DOCKERIZE_VERSION="0.6.1"
 
 RUN set -x && \
@@ -52,6 +53,10 @@ RUN chmod +x /usr/local/bin/aws-iam-authenticator
 
 ADD https://amazon-eks.s3-us-west-2.amazonaws.com/${KUBECTL_VERSION}/${KUBECTL_DATE}/bin/linux/amd64/kubectl /usr/local/bin/kubectl
 RUN chmod +x /usr/local/bin/kubectl
+
+ADD https://github.com/garethr/kubeval/releases/download/${KUBEVAL_VERSION}/kubeval-linux-amd64.tar.gz kubeval-linux-amd64.tar.gz
+RUN tar -C /usr/local/bin -xzvf kubeval-darwin-amd64.tar.gz && \
+    rm kubeval-linux-amd64.tar.gz
 
 # Install GIT
 RUN apk add --no-cache git
