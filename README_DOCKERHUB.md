@@ -1,6 +1,6 @@
 This repo is a fork of https://github.com/aserour/docker-aws-cli. All changes will be merged back to the initial repository if possible.
 
-fork repogisoty (this docker image source): https://github.com/guitarrapc/docker-aws-cli
+You can find [Dockerfile](https://github.com/guitarrapc/docker-aws-cli/blob/master/Dockerfile) in [fork repogisoty (this docker image source)](https://github.com/guitarrapc/docker-aws-cli)
 
 [![CircleCI](https://circleci.com/gh/guitarrapc/docker-aws-cli.svg?style=svg)](https://circleci.com/gh/guitarrapc/docker-aws-cli) [![hub](https://img.shields.io/docker/pulls/guitarrapc/docker-awscli-kubectl.svg)](https://hub.docker.com/r/guitarrapc/docker-awscli-kubectl/)
 
@@ -31,6 +31,7 @@ other tools will be updated on kubectl update time.
 | git |	World's most popular version control tool |
 | helm |	Package manager for K8S clusters that simplifies complex deployments with simple Charts |
 | helm-s3 plugin |	S3 integration plugin to use S3 as a private Helm Charts repositories |
+| kubeval   |Validate your Kubernetes configuration files, supports multiple Kubernetes versions       |
 | dockerize |   Utility to simplify running applications in docker containers   |
 
 > Important: tools have specific versions, see file Dockerfile.
