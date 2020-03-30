@@ -9,13 +9,13 @@ LABEL description="An Alpine based docker image contains a good combination of c
 LABEL maintainer="eng.ahmed.srour@gmail.com"
 
 # https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
-ENV AWS_CLI_VERSION="1.18.24" \
+ENV AWS_CLI_VERSION="1.18.31" \
     ENVSUBST_VERSION="1.1.0" \
     AWS_IAM_AUTHENTICATOR_VERSION="1.15.10" \
     AWS_IAM_AUTHENTICATOR_DATE="2020-02-22" \
     KUBECTL_VERSION="1.15.10" \
     KUBECTL_DATE="2020-02-22" \
-    HELM_VERSION="2.16.2" \
+    HELM_VERSION="3.1.2" \
     HELM_S3_VERSION="0.9.2" \
     KUBEVAL_VERSION="0.14.0" \
     DOCKERIZE_VERSION="0.6.1"
@@ -70,9 +70,6 @@ RUN apk add --no-cache git
 ADD https://storage.googleapis.com/kubernetes-helm/helm-v${HELM_VERSION}-linux-amd64.tar.gz helm-linux-amd64.tar.gz
 RUN tar -zxvf helm-linux-amd64.tar.gz && \
     mv linux-amd64/helm /usr/local/bin/helm
-
-# Initialize Helm
-RUN helm init --client-only
 
 # Install Helm S3 Plugin
 RUN helm plugin install https://github.com/hypnoglow/helm-s3.git --version ${HELM_S3_VERSION}
