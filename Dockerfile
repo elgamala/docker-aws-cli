@@ -18,7 +18,8 @@ ENV AWS_CLI_VERSION="1.18.24" \
     HELM_VERSION="2.16.2" \
     HELM_S3_VERSION="0.9.2" \
     KUBEVAL_VERSION="0.14.0" \
-    DOCKERIZE_VERSION="0.6.1"
+    DOCKERIZE_VERSION="0.6.1" \
+    SOPS_VERSION="3.5.0"
 
 RUN set -x && \
     apk add --no-cache python3 && \
@@ -57,6 +58,9 @@ RUN chmod +x /usr/local/bin/kubectl
 ADD https://github.com/garethr/kubeval/releases/download/${KUBEVAL_VERSION}/kubeval-linux-amd64.tar.gz kubeval-linux-amd64.tar.gz
 RUN tar -C /usr/local/bin -xzvf kubeval-linux-amd64.tar.gz && \
     rm kubeval-linux-amd64.tar.gz
+
+ADD https://github.com/mozilla/sops/releases/download/v${SOPS_VERSION}/sops-v${SOPS_VERSION}.linux /usr/local/bin/sops
+RUN chmod +x /usr/local/bin/sops
 
 # Install GIT
 RUN apk add --no-cache git

@@ -24,13 +24,14 @@ The image is mainly used as a builder images while creating CICD pipelines.
 |helm-s3 plugin         |0.9.2          |S3 integration plugin to use S3 as a private Helm Charts repositories                     |
 |kubeval                |0.4.0          |Validate your Kubernetes configuration files, supports multiple Kubernetes versions       |
 |dockerize              |0.6.1          |Utility to simplify running applications in docker containers                             |
+|sops                   |3.5.0          |Simple and flexible tool for managing secrets                                             |
 
 ## Installation guide
 
 Simply pull the image from official docker hub using the following command as it contains nothing more than a set of open source tools.
 
 ```sh
-  docker pull guitarrapc/docker-awscli-kubectl
+docker pull guitarrapc/docker-awscli-kubectl
 ```
 
 ## Even more useful in Gitlab
