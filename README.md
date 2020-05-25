@@ -17,8 +17,8 @@ The image is mainly used as a builder images while creating CICD pipelines.
 |cUrl                   |7.67.0         |Commandline professional http(s) client tool                                              |
 |Bash                   |4.4.19         |Advanced linux shell                                                                      |
 |Envsubst               |1.1.0          |Simple tool to substitute template files with matching Environment Variables values       |
-|aws-iam-authenticator  |1.15.10        |IAM authentication utility offers a secure proxy for authenticating kubectl to K8S cluster|
-|Kubectl                |1.15.10        |Kubectl used to administrate the K8S cluster                                              |
+|aws-iam-authenticator  |1.16.8         |IAM authentication utility offers a secure proxy for authenticating kubectl to K8S cluster|
+|Kubectl                |1.16.8         |Kubectl used to administrate the K8S cluster                                              |
 |git                    |2.24.1         |World's most popular version control tool                                                 |
 |helm                   |2.16.2         |Package manager for K8S clusters that simplifies complex deployments with simple Charts   |
 |helm-s3 plugin         |0.9.2          |S3 integration plugin to use S3 as a private Helm Charts repositories                     |

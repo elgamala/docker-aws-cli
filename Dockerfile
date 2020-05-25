@@ -11,10 +11,10 @@ LABEL maintainer="eng.ahmed.srour@gmail.com"
 # https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 ENV AWS_CLI_VERSION="1.18.31" \
     ENVSUBST_VERSION="1.1.0" \
-    AWS_IAM_AUTHENTICATOR_VERSION="1.15.10" \
-    AWS_IAM_AUTHENTICATOR_DATE="2020-02-22" \
-    KUBECTL_VERSION="1.15.10" \
-    KUBECTL_DATE="2020-02-22" \
+    AWS_IAM_AUTHENTICATOR_VERSION="1.16.8" \
+    AWS_IAM_AUTHENTICATOR_DATE="2020-04-16" \
+    KUBECTL_VERSION="1.16.8" \
+    KUBECTL_DATE="2020-04-16" \
     HELM_VERSION="3.1.2" \
     HELM_S3_VERSION="0.9.2" \
     KUBEVAL_VERSION="0.14.0" \
