@@ -6,6 +6,11 @@ An Alpine based docker image contains a good combination of commenly used tools 
 
 The image is mainly used as a builder images while creating CICD pipelines.
 
+## Versioning
+
+version will match to the kubectl.
+other tools will be updated on kubectl update time.
+
 ## Tools listing
 
 |Tool                   |Version        |Description                                                                               |
@@ -51,3 +56,7 @@ docker:
     script:
         - echo 'Your build scripts goes here and you can use all of the above toolset'
 ```
+
+## Credits
+
+Ahmed Sorour, https://github.com/aserour
