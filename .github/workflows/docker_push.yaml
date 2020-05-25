@@ -18,4 +18,7 @@ jobs:
       - run: docker build --build-arg VCS_REF=$(git rev-parse --short HEAD) -t ${OWNER}/${IMAGE_NAME}:latest .
       - run: docker tag ${OWNER}/${IMAGE_NAME}:latest ${OWNER}/${IMAGE_NAME}:${GIT_TAG}
       - run: docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
+        env:
+          DOCKER_USER: ${{ secrets.SYNCED_DOCKER_USER }}
+          DOCKER_PASS: ${{ secrets.SYNCED_DOCKER_PASS }}
       - run: docker push ${OWNER}/${IMAGE_NAME}

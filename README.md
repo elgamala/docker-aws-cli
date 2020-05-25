@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/guitarrapc/docker-aws-cli.svg?style=svg)](https://circleci.com/gh/guitarrapc/docker-aws-cli) [![hub](https://img.shields.io/docker/pulls/guitarrapc/docker-awscli-kubectl.svg)](https://hub.docker.com/r/guitarrapc/docker-awscli-kubectl/)
+![Docker Build](https://github.com/guitarrapc/docker-aws-cli/workflows/Docker%20Build/badge.svg) ![Docker Push](https://github.com/guitarrapc/docker-aws-cli/workflows/Docker%20Push/badge.svg) [![hub](https://img.shields.io/docker/pulls/guitarrapc/docker-awscli-kubectl.svg)](https://hub.docker.com/r/guitarrapc/docker-awscli-kubectl/)
 
 ## Builder docker image
 
