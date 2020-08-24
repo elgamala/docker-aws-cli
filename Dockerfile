@@ -11,15 +11,15 @@ LABEL maintainer="eng.ahmed.srour@gmail.com"
 # https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 ENV AWS_CLI_VERSION="1.18.31" \
     ENVSUBST_VERSION="1.1.0" \
-    AWS_IAM_AUTHENTICATOR_VERSION="1.16.8" \
-    AWS_IAM_AUTHENTICATOR_DATE="2020-04-16" \
-    KUBECTL_VERSION="1.16.8" \
-    KUBECTL_DATE="2020-04-16" \
-    HELM_VERSION="3.1.2" \
+    AWS_IAM_AUTHENTICATOR_VERSION="1.17.9" \
+    AWS_IAM_AUTHENTICATOR_DATE="2020-08-04" \
+    KUBECTL_VERSION="1.17.9" \
+    KUBECTL_DATE="2020-08-04" \
+    HELM_VERSION="3.3.0" \
     HELM_S3_VERSION="0.9.2" \
-    KUBEVAL_VERSION="0.14.0" \
+    KUBEVAL_VERSION="0.15.0" \
     DOCKERIZE_VERSION="0.6.1" \
-    SOPS_VERSION="3.5.0"
+    SOPS_VERSION="3.6.0"
 
 RUN set -x && \
     apk add --no-cache python3 && \
